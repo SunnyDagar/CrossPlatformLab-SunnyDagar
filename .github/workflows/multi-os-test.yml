@@ -14,6 +14,9 @@ jobs:
       - name: Print start message
         run: echo "Testing on Ubuntu..."
 
+      - name: Hold for parallel visibility
+        run: sleep 35
+
       - name: Display OS information
         run: uname -a
 
@@ -32,6 +35,9 @@ jobs:
     steps:
       - name: Print start message
         run: Write-Host "Testing on Windows..."
+
+      - name: Hold for parallel visibility
+        run: Start-Sleep -Seconds 35
 
       - name: Display OS information
         run: Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, OSArchitecture
